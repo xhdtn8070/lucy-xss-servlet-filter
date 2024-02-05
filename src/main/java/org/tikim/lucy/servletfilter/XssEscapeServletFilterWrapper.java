@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.navercorp.lucy.security.xss.servletfilter;
+package org.tikim.lucy.servletfilter;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 
 /**
  * @author todtod80

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.navercorp.lucy.security.xss.servletfilter;
+package org.tikim.lucy.servletfilter;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;

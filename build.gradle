@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+}
+
+group 'org.tikim'
+version '1.0-SNAPSHOT'
+description 'Lucy Xss Servlet Filter - FOR JAVA 17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.3.2'
+    implementation 'commons-logging:commons-logging:1.1.1'
+    implementation 'com.navercorp.lucy:lucy-xss:1.6.3'
+    implementation 'javax.servlet:servlet-api:2.5'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+//    testImplementation 'junit:junit:4.13.1'
+//    testImplementation 'org.springframework:spring-test:3.2.11.RELEASE'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+            exclude '**/*.java'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        resources {
+            srcDir 'src/test/resources'
+            include '**/*.xml'
+            include '**/*.properties'
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.deprecation = true
+    options.compilerArgs << '-Xlint:all' << '-Xdoclint:none'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Customize jar task if needed
+jar {
+    archiveBaseName.set('lucy-xss-servlet')
+    archiveVersion.set('1.0-SNAPSHOT')
+    from sourceSets.main.output
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+processTestResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

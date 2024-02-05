@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-package com.navercorp.lucy.security.xss.servletfilter;
+package org.tikim.lucy.servletfilter;
 
-import com.navercorp.lucy.security.xss.servletfilter.defender.Defender;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.tikim.lucy.servletfilter.defender.Defender;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 /**
  * @author todtod80

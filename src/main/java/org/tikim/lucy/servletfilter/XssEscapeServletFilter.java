@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-package com.navercorp.lucy.security.xss.servletfilter;
+package org.tikim.lucy.servletfilter;
 
-import javax.servlet.*;
 import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
 /**
  * @author todtod80

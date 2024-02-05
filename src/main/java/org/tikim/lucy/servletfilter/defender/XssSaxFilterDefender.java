@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package com.navercorp.lucy.security.xss.servletfilter.defender;
+package org.tikim.lucy.servletfilter.defender;
 
-
-import com.nhncorp.lucy.security.xss.XssFilter;
+import com.nhncorp.lucy.security.xss.XssSaxFilter;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author todtod80
  */
-public class XssFilterDefender implements Defender {
-	private XssFilter filter;
+public class XssSaxFilterDefender implements Defender {
+	private XssSaxFilter filter;
 
 	/**
 	 * @param values String[]
@@ -33,21 +32,20 @@ public class XssFilterDefender implements Defender {
 	@Override
 	public void init(String[] values) {
 		if (values == null || values.length == 0) {
-			filter = XssFilter.getInstance();
+			filter = XssSaxFilter.getInstance();
 		} else {
 			switch (values.length) {
 				case 1:
 					if (isBoolean(values[0])) {
-						filter = XssFilter.getInstance(convertBoolean(values[0]));	
+						filter = XssSaxFilter.getInstance(convertBoolean(values[0]));	
 					} else {
-						filter = XssFilter.getInstance(values[0]);
+						filter = XssSaxFilter.getInstance(values[0]);
 					}
 					break;
 				case 2:
-					filter = XssFilter.getInstance(values[0], convertBoolean(values[1]));	
+					filter = XssSaxFilter.getInstance(values[0], convertBoolean(values[1]));	
 					break;
 				default:
-					filter = null;
 					break;
 			}
 		}

@@ -1,20 +1,47 @@
-# lucy
+HELP.md
 target/
-bin/
+.gradle
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Eclipse
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
-.settings/
-
-# Intellij
-.idea/
-*.iml
-*.iws
-
-# Mac
-.DS_Store
-
-# Etc
+.settings
 .springBeans
-.checkstyle
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### ###
+src/main/resources/application.properties
+src/main/resources/application.yml
+### src/main/resources/private_key.der ###
+/.mvn/
+.DS_Store
+out
+logs
+src/main/resources/application.dev.properties
+src/main/resources/application.dev.yml
+src/main/resources/application.test.properties
+src/main/resources/application.test.yml

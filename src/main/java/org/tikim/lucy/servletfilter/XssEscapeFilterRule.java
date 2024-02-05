@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.navercorp.lucy.security.xss.servletfilter;
+package org.tikim.lucy.servletfilter;
 
-import com.navercorp.lucy.security.xss.servletfilter.defender.Defender;
+import org.tikim.lucy.servletfilter.defender.Defender;
 
 /**
  * @author todtod80
